@@ -1,0 +1,10 @@
+CC=mpiicc
+MPICC=mpiicc
+OPENMP = -fopenmp
+OPTIMIZE =  -openmp -O0 -g 
+DEPCMD = gcc -MG -MT .objs/$(<:%.c=%.o) -MM 
+CPPFLAGS = -DFASTPM_FFT_PRECISION=32
+GSL_LIBS = -lgsl -lgslcblas
+LDFLAGS = 
+OPTIMIZE ?= -O3 -g -Werror -Wall
+
